@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Template</title>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col">
+        <h1>Update Task</h1>
+    </div>
+
+    <div class="col">
+        <form action="/update/{{ task.id }}" method="POST" class="form">
+            <input type="hidden" name="_method" value="PUT"/>
+
+            <input type="text" name="content" id="content" value="{{ task.content }}">
+            <input type="submit" value="Update Task">
+        </form>
+    </div>
+</div>
+{% endblock %}
